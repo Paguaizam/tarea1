@@ -41,10 +41,9 @@ public class Mavenproject2 {
             
         System.out.println("El auto de precio "+ autoJuan.precio +
                 "Debe pagar matricula ="+
-                autoJuan.obtenerMatricula());
+                autoJuan.calcularMatricula());
          
-        
-                
+       
       
     }
 }
