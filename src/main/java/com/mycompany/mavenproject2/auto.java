@@ -13,7 +13,7 @@ public class auto {
     String marca;
     int año;
     String placa;
-    int precio;
+    double precio;
     
     public boolean esTaxi(){
         var retorno= false;
@@ -39,27 +39,22 @@ public class auto {
         }
         return retorno;
     }
-     public int obtenerMatricula (){
-         var retorno=100000;
-         if(this.precio>0 && this.precio<=10000){
-             if(this.año>0 && this.año<2010){
-                 retorno=(precio*10)/100;
-             }else{
-                    if( this.año>2010){
-                     retorno=(precio*15)/100;
-                    }  
-              }
-        } else{
-          if ((this.precio>10000)){
-                if(this.año>0 && this.año<2010){
-                 retorno=(precio*20)/100;
-                }else{
-                    if( this.año>2010){
-                     retorno=(precio*25)/100;
-                    }  
-                }    
-            } 
-        }
-        return retorno;
+     
+     public double calcularMatricula(){
+         var retorno=10000d;
+         if(this.año>0 && this.año<=2010){
+            if (this.precio>=0 && this.precio<=10000)
+                retorno=this.precio*0.1;
+            else
+            retorno=this.precio*0.15;
+         }else{
+             if(this.precio>=0 && this.precio<=10000)
+                 retorno=this.precio*0.20;
+             else
+                 retorno=this.precio*0.25;
+         }
+         return retorno;
     }
+     
 }
+
